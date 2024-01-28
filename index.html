@@ -20,6 +20,7 @@
     }
 
     .photo {
+    	cursor: pointer;
     	border-radius: 5% 2% / 2% 5%;
     }
     
@@ -44,35 +45,12 @@
   </div>
 
 <script>
-	const prefix = "https://pub-97fd32932b9940f584b8c8ea8e29ca90.r2.dev/";
+	const prefix = "https://example.com/";
 
 	const photos = [
-	"DSC_0094_small.jpg",
-	"DSC_0100_small.jpg",
-	"DSC_0103_small.jpg",
-	"DSC_0107_small.jpg",
-	"DSC_0113_small.jpg",
-	"DSC_0118_small.jpg",
-	"DSC_0119_small.jpg",
-	"DSC_0120_small.jpg",
-	"DSC_0010_small.jpg",
-	"DSC_0011_small.jpg",
-	"DSC_0014_small.jpg",
-	"DSC_0018_small.jpg",
-	"DSC_0024_small.jpg",
-	"DSC_0026_small.jpg",
-	"DSC_0029_small.jpg",
-	"DSC_0031_small.jpg",
-	"DSC_0035_small.jpg",
-	"DSC_0045_small.jpg",
-	"DSC_0047_small.jpg",
-	"DSC_0049_small.jpg",
-	"DSC_0050_small.jpg",
-	"DSC_0052_small.jpg",
-	"DSC_0070_small.jpg",
-	"DSC_0078_small.jpg",
-	"DSC_0082_small.jpg",
-	"DSC_0091_small.jpg",
+	"aaa.jpg",
+	"bbb.jpg",
+	"ccc.jpg",
 	];
   
 	const title = document.querySelector("title");
@@ -84,14 +62,14 @@
 
 	function randomlyChange() {
 	  const i = getRandomInt(0, photos.length);
+	  // img.src = prefix + photos[i];
 	  img.src = photos[i];
 	  title.innerText = photos[i];
 	}
 	
 	randomlyChange();
 	
-	const a = document.querySelector("a");
-	a.addEventListener("click", event => {
+	img.addEventListener("click", event => {
 		event.preventDefault();
 		randomlyChange();
 	});
